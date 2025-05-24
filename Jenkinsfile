@@ -17,15 +17,15 @@ pipeline {
                     npm ci
                     npm run build
                     ls -la
-                    cd build
-                    if [ -f "index.html" ]; then
-    echo "File exists"
-    cd ..
-    npm test
-else
-    echo "File does not exist"
-fi
                '''
+            }
+        }
+        stage('Test') {
+            steps{
+                sh '''
+                    test -f build/index.html
+                    npm test
+                '''
             }
         }
     }
