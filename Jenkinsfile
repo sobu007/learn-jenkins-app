@@ -18,7 +18,7 @@ pipeline {
                     npm run build
                     ls -la
                     cd build
-                    if [ -f "filename.txt" ]; then
+                    if [ -f "index.html" ]; then
     echo "File exists"
     cd ..
     npm test
