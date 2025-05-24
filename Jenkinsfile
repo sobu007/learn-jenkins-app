@@ -17,6 +17,14 @@ pipeline {
                     npm ci
                     npm run build
                     ls -la
+                    cd build
+                    if [ -f "filename.txt" ]; then
+    echo "File exists"
+    cd ..
+    npm test
+else
+    echo "File does not exist"
+fi
                '''
             }
         }
